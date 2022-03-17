@@ -43,7 +43,7 @@ class Solution{
     {
         Node* slow=head,*fast=head;
         while(fast!=nullptr){
-            if(fast->next==nullptr)break;
+            if(fast->next==nullptr)return slow->data;
             fast=fast->next->next;
             slow=slow->next;
         }
