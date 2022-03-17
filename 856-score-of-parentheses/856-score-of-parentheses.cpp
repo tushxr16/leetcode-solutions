@@ -6,9 +6,9 @@ public:
         for(auto c:s){
             if(c=='('){
                 st.push(ind);
-                ind=0;
+                ind = 0;
             }else{
-                ind = st.top() + max(1,2*ind);
+                ind = st.top() + max(2*ind,1);
                 st.pop();
             }
         }
