@@ -3,9 +3,9 @@ public:
     void sortColors(vector<int>& nums) {
         int low=0,high=nums.size()-1,mid=0;
         while(mid<=high){
-            if(nums[mid]==0){swap(nums[low],nums[mid]);low++;mid++;}
+            if(nums[mid]==0)swap(nums[low++],nums[mid++]);
             else if(nums[mid]==1)mid++;
-            else if(nums[mid]==2){swap(nums[mid],nums[high]);high--;}
+            else swap(nums[mid],nums[high--]);
         }
         // int a0=0,a1=0,a2=0;
         // for(int i=0;i<nums.size();i++){
