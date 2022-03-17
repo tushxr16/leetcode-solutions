@@ -12,10 +12,8 @@ class Solution{
     public:
     // Function to check if given number n is a power of two.
     bool isPowerofTwo(long long n){
-        bitset<64> b=n;int one=0;
-        for(int i=0;i<64;i++)if(b[i]==1)one++;
-        if(one==1)return true;
-        else return false;
+        if(n && !(n&(n-1)))return true;
+        return false;
     }
 };
 
