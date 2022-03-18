@@ -34,6 +34,7 @@ class Solution{
     //Function to check whether the list is palindrome.
     bool isPalindrome(Node *head)
     {
+        //Nodes initialise kallu???
         Node *mid=head,*tail=head;
         //Mid Pointer find kar rha hu
         while(tail->next!=nullptr && tail->next->next!=nullptr){
@@ -48,6 +49,7 @@ class Solution{
             prev=curr;
             curr=tmp;
         }
+        //Ab compare karega apun
         while(prev!=nullptr && head!=nullptr){
             if(prev->data!=head->data)return false;
             prev=prev->next;
