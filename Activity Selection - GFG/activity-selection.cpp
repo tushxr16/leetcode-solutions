@@ -14,14 +14,14 @@ class Solution
         vector<pair<int,int>> v;
         for(int i=0;i<n;i++)v.push_back({end[i],start[i]});
         sort(v.begin(),v.end());
-        int activity=1,last=v[0].first;
+        int ans=1,last=v[0].first;
         for(int i=1;i<n;i++){
             if(last<v[i].second){
                 last=v[i].first;
-                activity++;
+                ans++;
             }
         }
-        return activity;
+        return ans;
     }
 };
 
