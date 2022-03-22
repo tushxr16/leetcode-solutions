@@ -1,10 +1,11 @@
 class Solution {
 public:
     int mostWordsFound(vector<string>& sentences) {
-        int words=1;
-        for(int i=0;i<sentences.size();i++){
+        int words=1;int n=sentences.size();
+        for(int i=0;i<n;i++){
             int temp=1;
-            for(int j=0;j<sentences[i].size();j++)
+            int nn=sentences[i].size();
+            for(int j=0;j<nn;j++)
                 if(sentences[i][j]==' ')temp++;
             words=max(words,temp);
         }
