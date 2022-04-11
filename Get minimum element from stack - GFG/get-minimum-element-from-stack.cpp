@@ -17,7 +17,7 @@ public :
 */
 
 class Solution{
-    int minEle;
+    int minEle=INT_MAX;
     stack<pair<int,int>> s;
     public:
     
