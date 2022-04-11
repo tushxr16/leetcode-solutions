@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<vector<int>> changeByOne(vector<vector<int>>& grid){
         int n=grid[0].size(),m=grid.size();
-        vector<vector<int>> grid2(grid.begin(),grid.end());
+        vector<vector<int>> grid2(m,vector<int>(n,0));
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(j==n-1 & i==m-1)grid2[0][0]=grid[i][j];
