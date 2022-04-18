@@ -13,15 +13,14 @@ class Solution {
 public:
     void recur(TreeNode* root, int k, vector<int> &arr){
         if(root==nullptr)return;
-        recur(root->left,k,arr);        
+        recur(root->left,k,arr);
+        arr.push_back(root->val);        
         recur(root->right,k,arr);
-        arr.push_back(root->val);
         return;
     }
     int kthSmallest(TreeNode* root, int k) {
         vector<int> ans;
         recur(root,k,ans);
-        sort(ans.begin(),ans.end());
         return ans[k-1];
     }
 };
