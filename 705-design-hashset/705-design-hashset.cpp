@@ -1,23 +1,21 @@
 class MyHashSet {
 public:
-    map<int,int> mp;
+    int v[1000001]={0};
     MyHashSet() {
-        
     }
     
     void add(int key) {
-        if(mp.find(key)==mp.end())mp[key]=1;
-        else mp[key]++;
+        v[key]++;
         return;
     }
     
     void remove(int key) {
-        if(mp.find(key)!=mp.end())mp.erase(key);
+        v[key]=0;
         return;
     }
     
     bool contains(int key) {
-        if(mp.find(key)==mp.end())return false;
+        if(v[key]==0)return false;
         else return true;
     }
 };
