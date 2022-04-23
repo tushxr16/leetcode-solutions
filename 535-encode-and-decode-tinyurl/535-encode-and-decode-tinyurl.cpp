@@ -17,7 +17,8 @@ public:
             if(shortUrl[i]!='/')
                 num.push_back(shortUrl[i]);
             else break;
-        for(int i=0;i<num.size()/2;i++)swap(num[i],num[num.size()-1-i]);
+        for(int i=0;i<num.size()/2;i++)
+            swap(num[i],num[num.size()-1-i]);
         return v[stoi(num)];
     }
 };
