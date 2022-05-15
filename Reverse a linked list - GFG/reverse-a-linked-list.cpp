@@ -36,12 +36,12 @@ class Solution
     struct Node* reverseList(struct Node *head)
     {
         if(head==nullptr)return head;
-        Node *prev=nullptr,*curr=head;
+        Node* curr=head,*prev=nullptr;
         while(curr!=nullptr){
-            Node *tmp=curr->next;
-            curr->next = prev;
+            Node* next=curr->next;
+            curr->next=prev;
             prev=curr;
-            curr=tmp;
+            curr=next;
         }
         return prev;
     }
