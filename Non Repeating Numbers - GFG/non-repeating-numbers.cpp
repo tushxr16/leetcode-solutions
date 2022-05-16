@@ -10,7 +10,6 @@ public:
     {
         int xr=0,n=nums.size(),x=0,y=0;
         for(int i=0;i<n;i++)xr^=nums[i];
-        
         xr = xr & ~(xr-1);
         for(int i=0;i<n;i++){
             if(xr&nums[i])x = x^nums[i];
