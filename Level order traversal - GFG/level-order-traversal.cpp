@@ -47,16 +47,17 @@ class Solution
         queue<Node*> q;
         if(node!=nullptr)
             q.push(node);
-        
+            
         while(!q.empty()){
-            Node *n = q.front();
-            v.push_back(n->data);
+            Node * tmp = q.front();
+            v.push_back(tmp->data);
             q.pop();
-            if(n->left!=nullptr)
-                q.push(n->left);
+            
+            if(tmp->left)
+                q.push(tmp->left);
+            if(tmp->right)
+                q.push(tmp->right);
                 
-            if(n->right!=nullptr)
-                q.push(n->right);
         }
         return v;
     }
