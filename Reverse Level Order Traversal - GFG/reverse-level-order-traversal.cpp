@@ -114,22 +114,27 @@ struct Node
 }; */
 vector<int> reverseLevelOrder(Node *root)
 {
-    vector<int> v;
-    queue<Node*> q;
-    if(root!=nullptr)
-        q.push(root);
-    while(!q.empty()){
-        Node *tmp = q.front();
-        v.push_back(tmp->data);
-        q.pop();
-        
-        if(tmp->right)
+        vector<int> v;
+        queue<Node*> q;
+        stack<Node*> st;
+        if(root!=nullptr)
+            q.push(root);
+            
+        while(!q.empty()){
+            Node *tmp = q.front();
+            st.push(tmp);
+            q.pop();
+            
+            if(tmp->right)
                 q.push(tmp->right);
-        if(tmp->left)
+            if(tmp->left)
                 q.push(tmp->left);
                 
-    }
-    int n=v.size();
-    for(int i=0;i<n/2;i++)swap(v[i],v[n-i-1]);
-    return v;
+        }
+        while(!st.empty()){
+            Node *tmp = st.top();
+            v.push_back(tmp->data);
+            st.pop();
+        }
+        return v;
 }
