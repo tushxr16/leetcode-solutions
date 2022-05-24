@@ -112,25 +112,31 @@ struct Node{
     the flattened linked list. */
 Node *flatten(Node *root)
 {
-   Node *ptr = root;
+   Node *ptr = root, *ans=nullptr;
    vector<int> v;
    while(ptr){
-       Node *tmp = ptr->bottom;
-       v.push_back(ptr->data);
+       Node *tmp = ptr->bottom, *tmp2 = new Node(ptr->data);
+       tmp2->bottom=ans;
+       ans=tmp2;
        while(tmp){
-        v.push_back(tmp->data);
+        tmp2 = new Node(tmp->data);
+        tmp2->bottom=ans;
+        ans=tmp2;
         tmp=tmp->bottom;
        }
        ptr=ptr->next;
    }
-   sort(v.begin(),v.end());
-   ptr = NULL;
-   while(v.size()){
-       Node *tmp = new Node(v[v.size()-1]);
-       tmp->bottom=ptr;
-       ptr = tmp;
-       v.pop_back();
+   Node *ptr2=nullptr;
+   ptr = ans;
+   while(ptr){
+       ptr2 = ptr->bottom;
+       while(ptr2){
+           if(ptr2->data < ptr->data)
+            swap(ptr2->data,ptr->data);
+            ptr2=ptr2->bottom;
+       }
+       ptr=ptr->bottom;
    }
-   return ptr;
+   return ans;
 }
 
