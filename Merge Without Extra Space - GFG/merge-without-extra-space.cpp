@@ -7,10 +7,12 @@ using namespace std;
 class Solution{
 public:
 	void merge(int arr1[], int arr2[], int n, int m) {
-	    for(int i=0;i<n/2;i++)
-	        swap(arr1[i],arr1[n-1-i]);
-	    for(int i=0;i<min(n,m) && arr1[i]>arr2[i];i++)
-	        swap(arr1[i],arr2[i]);
+	    int i=n-1,j=0;
+	    while(arr1[i]>arr2[j] && i>-1 && j<m){
+	        swap(arr1[i],arr2[j]);
+	        i--;
+	        j++;
+	    }
 	    sort(arr1,arr1+n);
 	    sort(arr2,arr2+m);
 	}
