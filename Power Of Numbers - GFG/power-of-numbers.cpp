@@ -21,7 +21,7 @@ class Solution{
                R = R-1;
            }
        }
-       return ans%mod;
+       return ans;
     }
 
 };
