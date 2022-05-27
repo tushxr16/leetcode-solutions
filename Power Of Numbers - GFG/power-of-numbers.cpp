@@ -8,15 +8,16 @@ class Solution{
     public:
     //You need to complete this fucntion
     
-    long long power(long long N,int R)
+    long long power(int N,int R)
     {
        long long ans = 1;
+       long long x = N;
        while(R>0){
            if(R%2 == 0){
-               N = (N*N)%mod;
+               x = (x*x)%mod;
                R = R/2;
            }else{
-               ans = (ans*N)%mod;
+               ans = (ans*x)%mod;
                R = R-1;
            }
        }
