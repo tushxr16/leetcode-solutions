@@ -38,33 +38,16 @@ class Solution
 {
     public:
     //Function to return the lowest common ancestor in a Binary Tree.
-    bool findPath(Node* root,int n, vector<Node*> &v){
-        if(root==nullptr)
-            return false;
-        v.push_back(root);
-        if(root->data==n){
-            return true;
-        }
-        if((root->left && findPath(root->left,n,v))
-            ||(root->right && findPath(root->right,n,v)))return true;
-        v.pop_back();
-        return false;
-    }
+    
     Node* lca(Node* root ,int n1 ,int n2 )
     {
-        Node *ans=nullptr;
-        vector<Node*> x;
-        vector<Node*> y;
-        if(findPath(root,n1,x) && findPath(root,n2,y)){
-            int j=min(x.size(),y.size());
-            for(int i=0;i<j;i++)
-                if(x[i]!=y[i]){
-                    j=i;
-                    break;
-                }
-            return x[j-1];
-        }
-        return ans;
+        if(root==nullptr)return nullptr;
+        if(root->data==n1 || root->data==n2)
+            return root;
+        Node *l = lca(root->left,n1,n2);
+        Node *r = lca(root->right,n1,n2);
+        if(l&&r)return root;
+        return (l!=nullptr)? l:r;
     }
 };
 
