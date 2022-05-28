@@ -104,18 +104,17 @@ struct Node
 class Solution{
     public:
     int getHeight(Node *root){
-        if(root==nullptr)
-            return 0;
-        int l = getHeight(root->left);
-        int r = getHeight(root->right);
-        if(l==-1 || r==-1)return -1;
-        if(abs(l-r)>1)
+        if(root==nullptr)return 0;
+        int lH = getHeight(root->left);
+        int rH = getHeight(root->right);
+        if(lH==-1 || rH==-1)return -1;
+        if(abs(lH-rH)>1)
             return -1;
-        return 1+max(l,r);
+        return 1+max(lH,rH);
     }
     bool isBalanced(Node *root)
     {
-        return getHeight(root)!=-1;
+        return getHeight(root)==-1? false:true;
     }
 };
 
