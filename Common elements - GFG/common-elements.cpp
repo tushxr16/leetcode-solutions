@@ -9,26 +9,21 @@ class Solution
     public:    
        vector <int> commonElements (int A[], int B[], int C[], int n1, int n2, int n3)
         {
-            unordered_map<int,int> a,b,c;
-            for(int i=0;i<n1;i++)
-                if(a.find(A[i])==a.end())
-                    a[A[i]] = 1;
-            
-            for(int i=0;i<n2;i++)
-                if(b.find(B[i])==b.end())
-                    b[B[i]] = 1;
-                    
-            for(int i=0;i<n3;i++)
-                if(c.find(C[i])==c.end())
-                    c[C[i]] = 1;
-            
+            int i=0,j=0,k=0;
             set<int> s;
-            for(int i=0;i<n1;i++)
-                if(a.find(A[i])!=a.end() && b.find(A[i])!=b.end() && c.find(A[i])!=c.end())
+            while(i<n1 && j<n2 && k<n3){
+                if(A[i]==B[j] && A[i]==C[k]){
                     s.insert(A[i]);
-            vector<int> ans;
-            for(auto x:s)
-                ans.push_back(x);
+                    i++;j++;k++;
+                }
+                else if(A[i]<B[j])
+                    i++;
+                else if(B[j]<C[k])
+                    j++;
+                else
+                    k++;
+            }
+            vector<int> ans(s.begin(),s.end());
             return ans;
             
         }
