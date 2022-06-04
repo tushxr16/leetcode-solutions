@@ -10,7 +10,7 @@ class Solution{
   public:
     vector <int> countDistinct (int A[], int n, int k)
     {
-        map<int,int> mp;
+        unordered_map<int,int> mp;
         vector<int> ans;
         for(int i=0;i<k;i++){
             if(mp.find(A[i])!=mp.end())
