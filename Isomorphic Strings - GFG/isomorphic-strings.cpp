@@ -15,27 +15,18 @@ class Solution
     //Function to check if two strings are isomorphic.
     bool areIsomorphic(string str1, string str2)
     {
-        map<char,char> mp;
         int n = str1.size(), m = str2.size();
         if(n!=m)return false;
-        for(int i=0;i<n;i++){
-            if(mp.find(str1[i])==mp.end()){
-                mp[str1[i]] = str2[i];
-            }else{
-                if(mp[str1[i]]!=str2[i]){
-                    return false;
-                }
-            }
+        int c[256], d[256];
+        for(int i=0;i<256;i++){
+          c[i]=d[i]=0;  
         }
-        mp.clear();
         for(int i=0;i<n;i++){
-            if(mp.find(str2[i])==mp.end()){
-                mp[str2[i]] = str1[i];
-            }else{
-                if(mp[str2[i]]!=str1[i]){
-                    return false;
-                }
-            }
+            c[str1[i]-'a']++;
+            d[str2[i]-'a']++;
+        }
+        for(int i=0;i<n;i++){
+            if(c[str1[i]-'a']!=d[str2[i]-'a'])return false;  
         }
         return true;
     }
