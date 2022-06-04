@@ -10,17 +10,17 @@ using namespace std;
 
 class Solution{
 public:
-    void help(stack<int> St, vector<int> &v){
-        if(St.empty())return;
-        int tmp = St.top();
-        v.push_back(tmp);
-        St.pop();
-        help(St,v);
+    void ReverseUtil(stack<int> st, vector<int> &ans){
+        if(st.size()==0)return;
+        int tp = st.top();
+        st.pop();
+        ans.push_back(tp);
+        ReverseUtil(st,ans);
         return;
     }
     vector<int> Reverse(stack<int> St){
         vector<int> ans;
-        help(St,ans);
+        ReverseUtil(St,ans);
         return ans;
     }
 };
