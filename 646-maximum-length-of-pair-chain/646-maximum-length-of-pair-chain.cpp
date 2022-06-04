@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findLongestChain(vector<vector<int>>& pairs) {
+    int findLongestChain(vector<vector<int>> pairs) {
         sort(pairs.begin(),pairs.end());
         int n = pairs.size(), ans = 0;
         vector<int> lis(n,1);
