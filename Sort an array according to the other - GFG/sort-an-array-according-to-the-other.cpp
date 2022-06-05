@@ -20,24 +20,20 @@ class Solution{
     vector<int> sortA1ByA2(vector<int> A1, int N, vector<int> A2, int M) 
     {
         vector<int> ans;
-        unordered_map<int,int> mp,mp2;
-        sort(A1.begin(),A1.end());
+        map<int,int> mp;
         for(int i=0;i<N;i++){
             mp[A1[i]]++;
-        }
-        for(int i=0;i<M;i++){
-            mp2[A2[i]]++;
         }
         for(int i=0;i<M;i++){
             if(mp.find(A2[i])!=mp.end()){
                 for(int j=0;j<mp[A2[i]];j++)
                     ans.push_back(A2[i]);
+                mp.erase(A2[i]);
             }
         }
-        for(int i=0;i<N;i++){
-            if(mp2.find(A1[i])==mp2.end()){
-                ans.push_back(A1[i]);
-            }
+        for(auto x:mp){
+            for(int i=0;i<x.second;i++)
+                ans.push_back(x.first);
         }
         return ans;
     } 
