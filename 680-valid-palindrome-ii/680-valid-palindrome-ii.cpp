@@ -1,18 +1,17 @@
 class Solution {
 public:
-    bool validPalindrome(string s) {
-        int low=0,high=s.size()-1;
-        return isPalin(s,low,high,0);
+    bool isPalin(string s, int i, int j){
+        while(i<=j){
+            if(s[i++]!=s[j--])return false;
+        }
+        return true;
     }
-    
-    bool isPalin(string s,int low,int high,int cnt){
-        if(cnt>1)return false;
-        while(low<high){
-            if(s[low]==s[high]){
-                low++;high--;
-            }else{
-                return isPalin(s,low+1,high,cnt+1) || isPalin(s,low,high-1,cnt+1);
-            }
+    bool validPalindrome(string s) {
+        int k = 0, n = s.size()-1;
+        while(k<n){
+            if(s[k]!=s[n])
+                return isPalin(s,k+1,n) || isPalin(s,k,n-1);
+            k++;n--;
         }
         return true;
     }
