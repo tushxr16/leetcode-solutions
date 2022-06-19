@@ -82,14 +82,9 @@ class Solution
     void deleteNode(Node *del)
     {
        Node *tmp = del->next;
-       if(tmp==nullptr){
-           del = nullptr;
-           delete(tmp);
-       }else{
-           Node *nxt = tmp->next;
-           del->data = tmp->data;
-           del->next = nxt;
-       }
+       del->data = tmp->data;
+       del->next = tmp->next;
+       delete(tmp);
        return;
     }
 
