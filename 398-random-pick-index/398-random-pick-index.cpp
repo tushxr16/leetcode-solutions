@@ -10,7 +10,9 @@ class Solution {
         }
     
         int pick(int target) {
-            return mp[target][rand()%mp[target].size()];
+            vector<int> ans = mp[target];
+            int n = rand()% ans.size();
+            return ans[n];
         }
 };
 
