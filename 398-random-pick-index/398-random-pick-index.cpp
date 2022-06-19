@@ -1,17 +1,16 @@
 class Solution {
     private:
-        vector<int> v;
+        map<int,vector<int>> mp;
     public:
         Solution(vector<int>& nums) {
-            v = nums;
+            int n = nums.size();
+            for(int i=0;i<n;i++){
+                mp[nums[i]].push_back(i);
+            }
         }
     
         int pick(int target) {
-            vector<int> idx;
-            for(int i=0;i<v.size();i++)
-                if(v[i]==target)
-                    idx.push_back(i);
-            return idx[rand()%idx.size()];
+            return mp[target][rand()%mp[target].size()];
         }
 };
 
