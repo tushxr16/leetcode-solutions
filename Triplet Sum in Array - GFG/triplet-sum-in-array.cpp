@@ -10,16 +10,17 @@ class Solution{
     //array A[] which sums up to X.
     bool find3Numbers(int A[], int n, int X)
     {
+        sort(A,A+n);
         for(int i=0;i<n;i++){
-        unordered_set<int> mp;
-        for(int j=i+1;j<n;j++){
-            int x = A[i]+A[j];
-            if(mp.find(X-x)==mp.end()){
-                mp.insert(A[j]);
-            }else return true;
+            int lo=i+1,hi=n-1;
+            while(lo<hi){
+                if(A[i]+A[lo]+A[hi]==X)
+                    return true;
+                else if(A[i]+A[lo]+A[hi]<X)lo++;
+                else hi--;
+            }
         }
-    }
-    return false;
+        return false;
     }
 
 };
