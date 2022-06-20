@@ -12,16 +12,26 @@ class Solution{
     //Function to return length of longest subsequence of consecutive integers.
     int findLongestConseqSubseq(int arr[], int N)
     {
-      int a[100001]={0};
-      for(int i=0;i<N;i++)a[arr[i]]=1;
-      int ans=1,tmp=0;
-      for(int i=1;i<100001;i++){
-          if(a[i]==0){
-              ans=max(ans,tmp);
-              tmp=0;
-          }else tmp++;
+      set<int> s;
+      for(int i=0;i<N;i++)
+        s.insert(arr[i]);
+      int ans = 1, tmp = 1, prev = *s.begin();
+      bool flag = true;
+      for(auto x:s){
+          if(flag){
+              prev = x;
+              flag = false;
+          }else{
+              if(x-prev==1){
+                    tmp++;
+              }else{
+                    ans = max(ans,tmp);
+                    tmp = 1;
+              }
+              prev = x;
+          }
       }
-      ans = max(ans,tmp);
+      ans=max(ans,tmp);
       return ans;
     }
 };
