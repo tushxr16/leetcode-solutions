@@ -34,27 +34,29 @@ class Solution{
     //Function to check whether the list is palindrome.
     bool isPalindrome(Node *head)
     {
-        //Nodes initialise kallu???
-        Node *mid=head,*tail=head;
-        //Mid Pointer find kar rha hu
-        while(tail->next!=nullptr && tail->next->next!=nullptr){
-            tail=tail->next->next;
-            mid=mid->next;
+        Node *slow = head, *fast = head;
+        
+        while(fast && fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
         }
-        //Reverse karunga ab hihi
-        Node *prev=NULL,*curr=mid;
-        while(curr!=nullptr){
-            Node *tmp=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=tmp;
+        
+        fast = nullptr;
+        
+        while(slow){
+            Node *tmp = slow->next;
+            slow->next = fast;
+            fast = slow;
+            slow = tmp;
         }
-        //Ab compare karega apun
-        while(prev!=nullptr && head!=nullptr){
-            if(prev->data!=head->data)return false;
-            prev=prev->next;
-            head=head->next;
+        
+        while(head && fast){
+            if(head->data != fast->data)
+                return false;
+            head = head->next;
+            fast = fast->next;
         }
+        
         return true;
     }
 };
