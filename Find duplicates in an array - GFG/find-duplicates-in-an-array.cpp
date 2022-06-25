@@ -6,17 +6,17 @@ using namespace std;
 class Solution{
   public:
     vector<int> duplicates(int arr[], int n) {
-        unordered_map<int,int> mp;
         vector<int> v;
-        for(int i=0;i<n;i++)
-            mp[arr[i]]++;
-        for(auto x:mp){
-            if(x.second>1)
-                v.push_back(x.first);
+        for(int i=0;i<n;i++){
+            int idx = arr[i]%n;
+            arr[idx] += n;
+        }
+        for(int i=0;i<n;i++){
+            if(arr[i]/n > 1)
+                v.push_back(i);
         }
         if(v.size()==0)
-            return {-1};
-        sort(v.begin(),v.end());
+            v.push_back(-1);
         return v;
     }
 };
