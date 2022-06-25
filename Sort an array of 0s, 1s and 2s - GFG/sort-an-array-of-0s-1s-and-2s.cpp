@@ -10,12 +10,15 @@ class Solution
     public:
     void sort012(int a[], int n)
     {
-       int low=0,mid=0,high=n-1;
-       while(mid<=high){
-           if(a[mid]==0)swap(a[low++],a[mid++]);
-           else if(a[mid]==1)mid++;
-           else swap(a[mid],a[high--]);
-       }
+        int lo=0,hi=n-1,mid;
+        while(mid<=hi){
+            if(a[mid]==0)
+                swap(a[lo++],a[mid++]);
+            else if(a[mid]==2)
+                swap(a[hi--],a[mid]);
+            else mid++;
+        }
+        return;
     }
     
 };
