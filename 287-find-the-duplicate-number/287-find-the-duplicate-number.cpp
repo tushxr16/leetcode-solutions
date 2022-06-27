@@ -1,10 +1,14 @@
 class Solution {
 public:
-    int findDuplicate(vector<int>& nums) {
-        bitset<100001> b;
-        for(auto x:nums){
-            if(b[x]!=0)return x;
-            else b[x]=1;
+    int findDuplicate(vector<int>& arr) {
+        int n = arr.size();
+        for(int i=0;i<n;i++){
+            int idx = arr[i]%n;
+            arr[idx]+=n;
+        }
+        for(int i=0;i<n;i++){
+            if(arr[i]/n>1)
+                return i;
         }
         return -1;
     }
