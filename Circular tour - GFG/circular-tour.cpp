@@ -26,19 +26,17 @@ class Solution{
     //the complete circle without exhausting its petrol in between.
     int tour(petrolPump p[],int n)
     {
-       int req = 0, xtra = 0, idx = 0;
-       for(int i=idx;i<n;i++){
-           petrolPump tmp = p[i];
-           xtra += tmp.petrol - tmp.distance;
-           if(xtra<0){
-               req+=xtra;
-               xtra = 0;
-               idx = i+1;
+       int start = 0, deficit = 0, surplus = 0;
+       for(int i=start;i<n;i++){
+           surplus += (p[i].petrol - p[i].distance);
+           if(surplus<0){
+               deficit += surplus;
+               surplus = 0;
+               start = i+1;
            }
        }
-       if(req+xtra>=0){
-           return idx;
-       }else return -1;
+       if(surplus+deficit>=0)return start;
+       else return -1;
     }
 };
 
