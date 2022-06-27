@@ -69,11 +69,14 @@ Node *removeDuplicates(Node *head)
 {
     if(head==nullptr)
         return head;
+    
     Node *curr = head;
     
     while(curr && curr->next){
         if(curr->data == curr->next->data){
+            Node *tmp = curr->next;
             curr->next = curr->next->next;
+            delete(tmp);
         }else{
             curr = curr->next;
         }
