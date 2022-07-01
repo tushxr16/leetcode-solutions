@@ -19,10 +19,7 @@ class Solution
         vector<cpp_int> dp(n+1,0);
         dp[0] = dp[1] = 1;
         for(int i=2;i<=n;i++){
-            int start = 0, end = i-1;
-            while(start<=i-1 && end>=0){
-                dp[i] += dp[start++]*dp[end--];
-            }
+            dp[i] = dp[i-1]*(4*i-2)/(i+1);
         }
         return dp[n];
     }
