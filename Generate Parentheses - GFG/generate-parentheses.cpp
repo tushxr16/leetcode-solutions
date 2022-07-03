@@ -14,23 +14,21 @@ vector<string> AllParenthesis(int n) ;
 class Solution
 {
     public:
-    void paraUtil(vector<string> &v, string s, int i, int j){
-        if(i==0 && j==0){
+    void paraUtil(vector<string> &v, string s, int i, int j,int n){
+        if(i==n && j==n){
             v.push_back(s);
             return;
         }
-        if(i!=0){
-            paraUtil(v,s+'(',i-1,j);
-        }
-        if(j>i){
-            paraUtil(v,s+')',i,j-1);
-        }
+        if(i!=n)
+            paraUtil(v,s+'(',i+1,j,n);
+        if(j<i)
+            paraUtil(v,s+')',i,j+1,n);
         return;
     }
     vector<string> AllParenthesis(int n) 
     {
         vector<string> ans;
-        paraUtil(ans,"",n,n);
+        paraUtil(ans,"",0,0,n);
         return ans;
     }
 };
