@@ -12,17 +12,17 @@ class Solution
 {
     public:
     //Function to find minimum number of pages.
-    bool isPossible(int A[], int N, int M, int min){
-        int studentRequired = 1, sum = 0;
+    bool isPossible(int A[], int N, int M, int mid){
+        int sum = 0, studentRequired = 1;
         for(int i=0;i<N;i++){
-            if(A[i]>min){
+            if(A[i]>mid)
                 return false;
-            }
-            if(sum+A[i]>min){
-                studentRequired++;
+            if(A[i]+sum>mid){
                 sum = A[i];
-                if(studentRequired>M)
+                studentRequired++;
+                if(studentRequired>M){
                     return false;
+                }
             }else{
                 sum+=A[i];
             }
@@ -31,20 +31,20 @@ class Solution
     }
     int findPages(int A[], int N, int M) 
     {
-        if(N<M)
+        if(N<M){
             return -1;
+        }
         
         int sum = 0, ans = INT_MAX;
         for(int i=0;i<N;i++)
             sum+=A[i];
         
         int start = 0, end = sum, mid;
-        
         while(start<=end){
             mid = (start+end)/2;
             if(isPossible(A,N,M,mid)){
-                ans = min(ans,mid);
                 end = mid-1;
+                ans = min(ans,mid);
             }else{
                 start = mid+1;
             }
