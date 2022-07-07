@@ -95,18 +95,24 @@ struct Node
 class Solution
 {
     public:
-    int isSumTreeUtil(Node* node){
-        if(node==nullptr)return 0;
-        int ls = isSumTreeUtil(node->left);
-        int rs = isSumTreeUtil(node->right);
-        if(ls==-1 || rs==-1)return -1;
-        if(((node->left == NULL) && (node->right==NULL))
-        ||(ls+rs == node->data))return ls+rs+node->data;
-        else return -1;
+    int solve(Node *root, bool &flag){
+        if(!root)
+            return 0;
+        if(!root->left && !root->right)
+            return root->data;
+        if(!flag)
+            return 0;
+        int l = solve(root->left,flag);
+        int r = solve(root->right,flag);
+        if(l+r!=root->data)
+            flag = false;
+        return l+r+root->data;
     }
     bool isSumTree(Node* root)
     {
-         return isSumTreeUtil(root)==-1? false: true;
+        bool flag = true;
+        solve(root,flag);
+        return flag;
     }
 };
 
