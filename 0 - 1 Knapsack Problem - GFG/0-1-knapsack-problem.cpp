@@ -11,14 +11,16 @@ class Solution
     int knapSack(int W, int wt[], int val[], int n)
     {
         vector<vector<int>> dp(n+1,vector<int>(W+1,0));
+        
         for(int i=0;i<=n;i++){
-            for(int weight=0;weight<=W;weight++){
-                if(i==0 || weight==0){
-                    dp[i][weight] = 0;
-                }else if(wt[i-1]<=weight){
-                    dp[i][weight] = max(val[i-1]+dp[i-1][weight-wt[i-1]], dp[i-1][weight]);
+            for(int j=0;j<=W;j++){
+                if(i==0 || j==0){
+                    dp[i][j] = 0;
+                }
+                else if(wt[i-1]<=j){
+                    dp[i][j] = max(val[i-1]+dp[i-1][j-wt[i-1]], dp[i-1][j]);
                 }else{
-                    dp[i][weight] = dp[i-1][weight];
+                    dp[i][j] = dp[i-1][j];
                 }
             }
         }
