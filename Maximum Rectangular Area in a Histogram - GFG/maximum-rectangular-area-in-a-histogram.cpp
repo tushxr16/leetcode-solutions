@@ -11,36 +11,36 @@ class Solution
     long long getMaxArea(long long arr[], int n)
     {
         stack<long long> st;
-        vector<long long> left(n,0),right(n,01);
-        long long ans = -1;
+        vector<long long> left(n,0), right(n,0);
         for(int i=0;i<n;i++){
             if(st.empty()){
-                left[i] = 0;
                 st.push(i);
+                left[i] = 0;
             }else{
-                while(!st.empty() && arr[st.top()]>=arr[i]){
+                
+                while(!st.empty() && arr[i]<=arr[st.top()]){
                     st.pop();
                 }
                 left[i] = st.empty()?0:st.top()+1;
                 st.push(i);
             }
         }
-        
         while(!st.empty())
             st.pop();
-        
-        for(int i=n-1;i>-1;i--){
+        for(int i=n-1;i>=0;i--){
             if(st.empty()){
-                right[i] = n-1;
                 st.push(i);
+                right[i] = n-1;
             }else{
-                while(!st.empty() && arr[st.top()]>=arr[i]){
+                
+                while(!st.empty() && arr[i]<=arr[st.top()]){
                     st.pop();
                 }
                 right[i] = st.empty()?n-1:st.top()-1;
                 st.push(i);
             }
         }
+        long long ans = 0;
         for(int i=0;i<n;i++){
             ans = max(ans,arr[i]*(right[i]-left[i]+1));
         }
