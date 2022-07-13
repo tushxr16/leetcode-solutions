@@ -6,27 +6,25 @@ using namespace std;
 class Solution {
   public:
     // Function to count paths between two vertices in a directed graph.
-    int count = 0;
-    void dfs(int x, vector<int> adj[], vector<bool> &vis, int dest){
-        if(x==dest){
-            count++;
-            return;
-        }
-        if(vis[x]){
-            return;
-        }
-        vis[x] = true;
-        for(int j=0;j<adj[x].size();j++){
-            if(!vis[adj[x][j]]){
-                dfs(adj[x][j],adj,vis,dest);
+    
+    int countPaths(int V, vector<int> adj[], int source, int destination) {
+        queue<int> q;
+        int count = 0;
+        q.push(source);
+        
+        if(source==destination)
+            return 1;
+        
+        while(!q.empty()){
+            int top = q.front();
+            q.pop();
+            for(int i=0;i<adj[top].size();i++){
+                if(adj[top][i] == destination){
+                    count++;
+                }
+                q.push(adj[top][i]);
             }
         }
-        vis[x] = false;
-        return;
-    }
-    int countPaths(int V, vector<int> adj[], int source, int destination) {
-        vector<bool> vis(V,false);
-        dfs(source,adj,vis,destination);
         return count;
     }
 };
