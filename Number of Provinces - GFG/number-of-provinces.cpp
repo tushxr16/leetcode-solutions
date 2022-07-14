@@ -13,7 +13,6 @@ class Solution {
         
         for(int j=0;j<adj[x].size();j++){
             if(!vis[j] && adj[x][j]){
-                vis[j] = true;
                 dfs(j,adj,vis);
             }
         }
