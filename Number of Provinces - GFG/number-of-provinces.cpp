@@ -10,23 +10,19 @@ class Solution {
   public:
     void dfs(int x, vector<vector<int>> &adj, vector<bool> &vis){
         vis[x] = true;
-        
-        for(int j=0;j<adj[x].size();j++){
-            if(!vis[j] && adj[x][j]){
+        for(int j=0;j<adj[x].size();j++)
+            if(!vis[j] && adj[x][j])
                 dfs(j,adj,vis);
-            }
-        }
         return;
     }
     int numProvinces(vector<vector<int>> adj, int V) {
         vector<bool> vis(V,false);
         int provinces = 0;
-        for(int i=0;i<V;i++){
+        for(int i=0;i<V;i++)
             if(!vis[i]){
                 provinces++;
                 dfs(i,adj,vis);
             }
-        }
         return provinces;
     }
 };
