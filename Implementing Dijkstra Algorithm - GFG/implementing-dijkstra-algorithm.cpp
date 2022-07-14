@@ -8,34 +8,32 @@ class Solution
 	public:
 	//Function to find the shortest distance of all the vertices
     //from the source vertex S.
-    int findMinIndex(vector<int> &weights, vector<bool> &visited, int V){
-        int idx, minimum_value = INT_MAX;
-        
+    int getMinimumWeight(vector<int> &weights, vector<bool> &vis, int V){
+        int mn=INT_MAX, idx = 0;
         for(int i=0;i<V;i++){
-            if(weights[i]<minimum_value && !visited[i]){
-                minimum_value = weights[i];
+            if(!vis[i] && mn>weights[i]){
                 idx = i;
+                mn = weights[i];
             }
         }
-        
         return idx;
     }
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
         vector<int> weights(V,INT_MAX);
-        vector<bool> visited(V,false);
+        vector<bool> vis(V,false);
         weights[S] = 0;
         
         for(int i=0;i<V-1;i++){
             
-            int min_index = findMinIndex(weights,visited,V);
-            visited[min_index] = true;
+            int x = getMinimumWeight(weights,vis,V);
+            vis[x] = true;
             
-            for(auto curr_node: adj[min_index]){
-                int node_val = curr_node[0];
-                int weight = curr_node[1];
-                if(!visited[node_val]){
-                    weights[node_val] = min(weights[node_val],weights[min_index] + weight);
+            for(auto node: adj[x]){
+                int node_val = node[0];
+                int weight = node[1];
+                if(!vis[node_val] && weights[node_val]>weight+weights[x]){
+                    weights[node_val] = weight + weights[x];
                 }
             }
         }
