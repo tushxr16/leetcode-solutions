@@ -8,6 +8,7 @@ class Solution
 	public:
 	//Function to return list containing vertices in Topological order. 
 	void topoSortUtil(int x, vector<int> adj[], vector<int> &ans, vector<bool> &vis){
+	    
 	    vis[x] = true;
 	    
 	    for(auto j: adj[x]){
