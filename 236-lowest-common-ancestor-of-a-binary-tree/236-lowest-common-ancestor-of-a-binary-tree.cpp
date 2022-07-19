@@ -14,7 +14,7 @@ public:
             return root;
         }
         if(!root->left && !root->right){
-            return nullptr;
+            return NULL;
         }
         TreeNode *left = NULL, *right = NULL;
         if(root->left)
