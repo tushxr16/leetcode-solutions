@@ -7,8 +7,9 @@ public:
             int lo = i+1, hi = n-1;
             while(lo<hi){
                 int sum = nums[i] + nums[lo] + nums[hi];
-                if(abs(sum-target)<=maxDiff){
-                    maxDiff = abs(sum-target);
+                int as = abs(sum-target);
+                if(as<=maxDiff){
+                    maxDiff = as;
                     ans = sum;
                 }
                 if(sum>target){
