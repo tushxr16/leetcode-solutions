@@ -1,21 +1,40 @@
 class Solution {
 public:
-    void backTracking(vector<string> &ans, string curr, int open, int close, int max){
-        if(curr.size() == max*2){
-            ans.push_back(curr);
-            return;
+    bool checkParanthesis(string s, int n){
+        stack<char> st;
+        for(int i=0;i<2*n;i++){
+            if(s[i]=='('){
+                st.push('(');
+            }else{
+                if(st.empty()){
+                    return false;
+                }else if(st.top()!='('){
+                    return false;
+                }else{
+                    st.pop();
+                }
+            }
         }
-        if(open<max){
-            backTracking(ans,curr + '(', open + 1, close, max);
+        if(st.empty()){
+            return true;
+        }else{
+            return false;
         }
-        if(close<open){
-            backTracking(ans,curr + ')', open, close + 1, max);
-        }
-        return;
     }
     vector<string> generateParenthesis(int n) {
         vector<string> ans;
-        backTracking(ans,"",0,0,n);
+        string s;
+        for(int i=0;i<n;i++){
+            s.push_back('(');
+        }
+        for(int i=0;i<n;i++){
+            s.push_back(')');
+        }
+        do{
+            if(checkParanthesis(s,n)){
+                ans.push_back(s);
+            }
+        }while(next_permutation(s.begin(),s.end()));
         return ans;
     }
 };
