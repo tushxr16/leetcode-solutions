@@ -5,8 +5,8 @@ public:
         for(int i=1;i<n;i++){
             
             int j = 0, m = min(strs[i].size(),strs[i-1].size());
-            
-            while(j<min(m,idx) && strs[i][j] == strs[i-1][j]){
+            m = min(idx,m);
+            while(j<m && strs[i][j] == strs[i-1][j]){
                 j++;
             }
             
