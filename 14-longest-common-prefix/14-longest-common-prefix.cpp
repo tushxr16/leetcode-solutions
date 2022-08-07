@@ -6,7 +6,7 @@ public:
             
             int j = 0, m = min(strs[i].size(),strs[i-1].size());
             
-            while(j<m && strs[i][j] == strs[i-1][j]){
+            while(j<min(m,idx) && strs[i][j] == strs[i-1][j]){
                 j++;
             }
             
