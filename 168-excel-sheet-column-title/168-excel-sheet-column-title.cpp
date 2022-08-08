@@ -9,9 +9,7 @@ public:
             columnTitle.push_back((x-1)+'A');
             columnNumber = (columnNumber-1)/26;
         }
-        columnNumber = columnTitle.size();
-        for(int i=0;i<columnNumber/2;i++)
-            swap(columnTitle[i],columnTitle[columnNumber-i-1]);
+        reverse(columnTitle.begin(),columnTitle.end());
         return columnTitle;
     }
 };
