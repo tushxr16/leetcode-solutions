@@ -3,7 +3,7 @@ public:
     vector<int> findErrorNums(vector<int>& nums) {
         vector<int> ans = {1,1};
         int n = nums.size();
-        int p = 1e4 + 1;
+        int p = n;
         for(int i=0;i<n;i++){
             nums[i]--;
             int idx = nums[i]%p;
