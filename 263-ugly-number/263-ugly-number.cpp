@@ -1,26 +1,13 @@
 class Solution {
 public:
     bool isUgly(int n) {
-        long long int div = 1;
-        if(n<=0){
+        if(n<1)
             return false;
-        }
-        while(n%div==0){
-            div *= 2;
-        }
-        div /= 2 ;
-        while(n%div==0){
-            div *= 3;
-        }
-        div /= 3;
-        while(n%div==0){
-            div *= 5;
-        }
-        div /= 5;
-        if(n/div==1){
-            return true;
-        }else{
-            return false;
-        }
+        int primes[3] = {2,3,5};
+        for(auto i: primes)
+            while(n%i==0){
+                n /= i;
+            }
+        return n==1;
     }
 };
