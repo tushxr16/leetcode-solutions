@@ -1,18 +1,17 @@
 class Solution {
-public:
-    vector<string> buildArray(vector<int>& target, int n) {
-        int sz = target.size(), cnt = 1;
-        vector<string> ans;
-        for(int i=0;i<sz;i++){
+    public List<String> buildArray(int[] target, int n) {
+        List<String> ans = new ArrayList<String>();
+        Integer sz = target.length, cnt = 1;
+        for(Integer i=0;i<sz;i++){
             if(target[i]!=cnt){
                 i--;
-                ans.push_back("Push");
-                ans.push_back("Pop");
+                ans.add("Push");
+                ans.add("Pop");
             }else{
-                ans.push_back("Push");
+                ans.add("Push");
             }
             cnt++;
         }
         return ans;
     }
-};
+}
