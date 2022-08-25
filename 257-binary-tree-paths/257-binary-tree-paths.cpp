@@ -20,8 +20,7 @@ public:
             ans.push_back(s);
             return;
         }
-        s+=(to_string(root->val));
-        s+="->";
+        s+=(to_string(root->val)+"->");
         trav(root->left,ans,s);
         trav(root->right,ans,s);
         return;
