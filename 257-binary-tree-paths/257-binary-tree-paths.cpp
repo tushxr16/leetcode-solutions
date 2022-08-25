@@ -21,8 +21,7 @@ public:
             return;
         }
         s+=(to_string(root->val));
-        s.push_back('-');
-        s.push_back('>');
+        s+="->";
         trav(root->left,ans,s);
         trav(root->right,ans,s);
         return;
