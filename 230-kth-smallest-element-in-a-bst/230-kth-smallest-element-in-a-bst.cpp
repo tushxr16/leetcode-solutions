@@ -11,16 +11,18 @@
  */
 class Solution {
 public:
-    void recur(TreeNode* root, int k, vector<int> &arr){
-        if(root==nullptr)return;
-        recur(root->left,k,arr);
-        arr.push_back(root->val);        
-        recur(root->right,k,arr);
-        return;
-    }
-    int kthSmallest(TreeNode* root, int k) {
-        vector<int> ans;
-        recur(root,k,ans);
-        return ans[k-1];
+    
+    int kthSmallest(TreeNode* root, int &k) {
+        if(root==nullptr){
+            return -1;
+        }
+        int val = kthSmallest(root->left,k);
+        k--;
+        if(k==0){
+            return root->val;
+        }else if(k<0){
+            return val;
+        }
+        return kthSmallest(root->right,k);
     }
 };
