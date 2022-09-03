@@ -2,48 +2,47 @@ class Solution {
 public:
     
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_set<string> s;
+        unordered_set<string> words;
         bool isPresent = false;
-        int n = wordList.size();
-        for(int i=0;i<n;i++){
-            s.insert(wordList[i]);
-            if(wordList[i]==endWord)
+        int depth = 0;
+        for(string word: wordList){
+            if(word==endWord){
                 isPresent = true;
+            }
+            words.insert(word);
         }
+        
         if(!isPresent){
             return 0;
         }
-        
         queue<string> q;
         q.push(beginWord);
-        int depth = 0, strSize = beginWord.size();
         
         while(!q.empty()){
             depth++;
-            n = q.size();
-            
+            int n = q.size();
             for(int i=0;i<n;i++){
-                string curr = q.front();
+                string temp = q.front();
                 q.pop();
-                for(int j=0;j<strSize;j++){
-                    string temp = curr;
+                int m = temp.size();
+                for(int j=0;j<m;j++){
                     for(char c='a';c<='z';c++){
-                        temp[j] = c;
-                        if(curr==temp){
+                        string changed = temp;
+                        changed[j] = c;
+                        if(changed==endWord){
+                            return ++depth;
+                        }
+                        if(changed==temp){
                             continue;
                         }
-                        if(temp==endWord){
-                            return depth+1;
-                        }
-                        if(s.find(temp)!=s.end()){
-                            q.push(temp);
-                            s.erase(temp);
+                        if(words.find(changed)!=words.end()){
+                            q.push(changed);
+                            words.erase(changed);
                         }
                     }
                 }
             }
         }
-        
         return 0;
     }
 };
