@@ -26,8 +26,8 @@ public:
                 q.pop();
                 int m = temp.size();
                 for(int j=0;j<m;j++){
+                    string changed = temp;
                     for(char c='a';c<='z';c++){
-                        string changed = temp;
                         changed[j] = c;
                         if(changed==endWord){
                             return ++depth;
