@@ -23,19 +23,19 @@ public:
         if(root){
             q.push(root);
         }
+        
         while(!q.empty()){
             int n = q.size();
             for(int i=0;i<n;i++){
                 Node* top = q.front();
                 q.pop();
-                if(top->left){
+                
+                if(top->left)
                     q.push(top->left);
-                }
-                if(top->right){
+                if(top->right)
                     q.push(top->right);
-                }
                 if(i==n-1){
-                    top->next = NULL;
+                    top->next = nullptr;
                 }else{
                     top->next = q.front();
                 }
