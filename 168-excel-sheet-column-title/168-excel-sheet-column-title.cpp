@@ -3,7 +3,7 @@ public:
     string convertToTitle(int columnNumber) {
         string columnTitle;
         columnNumber--;
-        while(columnNumber>=0){
+        while(columnNumber>-1){
             columnTitle += (columnNumber%26 + 'A');
             columnNumber /= 26;
             columnNumber--;
