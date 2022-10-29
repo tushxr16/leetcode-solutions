@@ -1,9 +1,6 @@
 # Max Min
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array<strong> A</strong> of size <strong>N</strong> of integers. Your task is to find the sum of&nbsp;<strong>minimum and maximum </strong>elements in the&nbsp;array.</span></p>
-
-<p>&nbsp;</p>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array<strong> A</strong> of size <strong>N</strong> of integers. Your task is to find the sum of&nbsp;<strong>minimum and maximum </strong>element&nbsp;in the&nbsp;array.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -39,5 +36,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= N &lt;= 10<sup>5</sup><br>
 -10<sup>9</sup> &lt;= A<sub>i</sub> &lt;= 10<sup>9</sup></span></p>
- <p></p>
-            </div>
+</div>
