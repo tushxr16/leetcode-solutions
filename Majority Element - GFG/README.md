@@ -1,7 +1,6 @@
 # Majority Element
-##  Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array <strong>A</strong> of <strong>N</strong> elements. Find the majority element in the array.&nbsp;A majority element in an array A of size N is an <strong>element that appears more than N/2 times in the array</strong>.</span><br>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array <strong>A</strong> of <strong>N</strong> elements. Find the majority element in the array.&nbsp;A majority element in an array A of size N is an <strong>element that appears more than N/2 times in the array</strong>.</span><br>
 &nbsp;</p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -42,5 +41,4 @@ The task is to complete the function <strong>majorityElement</strong>() which re
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ N ≤ 10<sup>7</sup><br>
 0 ≤ A<sub>i</sub> ≤ 10<sup>6</sup></span></p>
- <p></p>
-            </div>
+</div>
