@@ -6,15 +6,19 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:
-	int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
-	    int col = m-1, ans = -1;
+	int rowWithMax1s(vector<vector<int>> &arr, int n, int m) {
+	    int ans = m-1, col = -1;
 	    for(int i=0;i<n;i++){
-	        while(col>=0 && arr[i][col]==1){
-	            col--;
-	            ans = i;
+	        int j = ans;
+	        while((j>-1) && (arr[i][j]==1)){
+	            j--;
+	        }
+	        if(j!=ans){
+	            col = i;
+	            ans = j;
 	        }
 	    }
-	    return ans;
+	    return col;
 	}
 
 };
