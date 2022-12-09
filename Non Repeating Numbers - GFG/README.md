@@ -1,7 +1,6 @@
 # Non Repeating Numbers
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array A containing 2*N+2 positive&nbsp;numbers, out of which 2*N numbers exist in&nbsp;pairs&nbsp;whereas&nbsp;the other two number&nbsp;occur exactly once and are distinct. Find the other two numbers.</span></p>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array A containing 2*N+2 positive&nbsp;numbers, out of which 2*N numbers exist in&nbsp;pairs&nbsp;whereas&nbsp;the other two number&nbsp;occur exactly once and are distinct. Find the other two numbers. Return in increasing order.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -38,5 +37,4 @@ You do not need to read or print anything. Your task is to complete the function
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= length of array &lt;= 10<sup>6&nbsp;</sup></span><br>
 <span style="font-size:18px">1 &lt;= Elements in array &lt;= 5 * 10<sup>6</sup></span></p>
- <p></p>
-            </div>
+</div>
