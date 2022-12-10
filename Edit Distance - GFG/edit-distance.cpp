@@ -6,11 +6,15 @@ using namespace std;
 class Solution {
   public:
     int editDistance(string s, string t) {
-        int dp[1001][1001];
         int n = s.size(), m = t.size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1,0));
         
-        for(int i=0;i<=n;i++)dp[i][0] = i;
-        for(int i=0;i<=m;i++)dp[0][i] = i;
+        for(int i=0;i<=n;i++){
+            dp[i][0] = i;
+        }
+        for(int i=0;i<=m;i++){
+            dp[0][i] = i;
+        }
         
         for(int i=1;i<=n;i++){
             for(int j=1;j<=m;j++){
