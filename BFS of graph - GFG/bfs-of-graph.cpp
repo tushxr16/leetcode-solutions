@@ -1,33 +1,38 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
-        vector<int> ans;
-        vector<bool> visited(V,false);
+        vector<bool> vis(V,false);
+        vector<int> bfs;
         queue<int> q;
         q.push(0);
-        visited[0]=true;
+        vis[0] = true;
+        
         while(!q.empty()){
-            int frnt = q.front();
-            ans.push_back(frnt);
-            q.pop();
-            for(auto x:adj[frnt]){
-                if(!visited[x]){
-                    q.push(x);
-                    visited[x]=true;
+            int n = q.size();
+            for(int i=0;i<n;i++){
+                int x = q.front();
+                q.pop();
+                bfs.push_back(x);
+                for(auto j: adj[x]){
+                    if(!vis[j]){
+                        q.push(j);
+                        vis[j] = true;
+                    }
                 }
+                
             }
         }
-        return ans;
+        return bfs;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() {
     int tc;
     cin >> tc;
@@ -55,4 +60,5 @@ int main() {
         cout << endl;
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
