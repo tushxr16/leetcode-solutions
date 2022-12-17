@@ -1,21 +1,21 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution {
   public:
     int setBits(int N) {
-        int cnt=0;
-        while(N>0){
-            cnt+=(N%2);
-            N/=2;
+        int ans = 0;
+        while(N){
+            ans += (N%2);
+            N /= 2;
         }
-        return cnt;
+        return ans;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() {
     int t;
     cin >> t;
@@ -29,4 +29,5 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
