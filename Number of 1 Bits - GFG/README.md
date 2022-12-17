@@ -1,7 +1,6 @@
 # Number of 1 Bits
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a positive integer N, print count of set bits in it.&nbsp;</span></p>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a positive integer N, print count of set bits in it.&nbsp;</span></p>
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
@@ -31,5 +30,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ N ≤ 10<sup>9</sup></span></p>
- <p></p>
-            </div>
+</div>
