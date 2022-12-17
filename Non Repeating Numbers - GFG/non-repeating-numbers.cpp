@@ -7,14 +7,17 @@ class Solution{
 public:
     vector<int> singleNumber(vector<int> nums) 
     {
-        int xr=0,n=nums.size(),x=0,y=0;
-        for(int i=0;i<n;i++)xr^=nums[i];
-        xr = xr & ~(xr-1);
+        int xr = 0, x = 0, y = 0, n = nums.size();
         for(int i=0;i<n;i++){
-            if(xr&nums[i])
+            xr ^= nums[i];
+        }
+        xr = (xr)& ~(xr-1);
+        for(int i=0;i<n;i++){
+            if(nums[i]&xr){
                 x = x^nums[i];
-            else 
-                y = y^nums[i];
+            }else{
+                y  = y^nums[i];
+            }
         }
         return {min(x,y),max(x,y)};
     }
