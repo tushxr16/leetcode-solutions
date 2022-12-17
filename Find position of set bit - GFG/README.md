@@ -1,7 +1,6 @@
 # Find position of set bit
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a number <strong>N</strong> having only one ‘1’ and all other ’0’s in its binary representation, find position of the only set bit. If there are 0 or more than 1 set bit the answer should be -1. Position of &nbsp;set bit&nbsp;'1' should be counted starting with 1 from LSB side in&nbsp;binary representation of the number.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a number <strong>N</strong> having only one ‘1’ and all other ’0’s in its binary representation, find position of the only set bit. If there are 0 or more than 1 set bit the answer should be -1. Position of &nbsp;set bit&nbsp;'1' should be counted starting with 1 from LSB side in&nbsp;binary representation of the number.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -35,5 +34,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 
 <p><span style="font-size:18px"><strong>Constraints:</strong></span><br>
 <span style="font-size:18px">0 &lt;= N &lt;= 10<sup>8</sup></span></p>
- <p></p>
-            </div>
+</div>
