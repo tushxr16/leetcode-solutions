@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -89,12 +89,27 @@ int main() {
         cout << minValue(root) << endl;
     }
     return 1;
-}// } Driver Code Ends
+}
+// } Driver Code Ends
 
 
 // Function to find the minimum element in the given BST.
+void findMin(Node* root, int &ans){
+    if(root==NULL){
+        return;
+    }
+    if(root->data < ans){
+        ans = root->data;
+    }
+    findMin(root->left, ans);
+    findMin(root->right, ans);
+    return;
+}
 int minValue(Node* root) {
-    if(root==NULL)return -1;
-    if(root->left==NULL)return root->data;
-    return minValue(root->left);
+    if(root==NULL){
+        return -1;
+    }
+    int ans = INT_MAX;
+    findMin(root, ans);
+    return ans;
 }
