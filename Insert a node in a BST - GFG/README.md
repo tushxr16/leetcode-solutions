@@ -1,7 +1,6 @@
 # Insert a node in a BST
-##  Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a BST and a key K. If K is not present in the BST, Insert a new Node with a value equal to K into the BST.&nbsp;<br>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a BST and a key K. If K is not present in the BST, Insert a new Node with a value equal to K into the BST.&nbsp;<br>
 <strong>Note: </strong>If K is already present in the BST, don't modify the BST.</span></p>
 
 <p><br>
@@ -44,5 +43,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= Number of nodes &lt;= 10<sup>5</sup></span><br>
 <span style="font-size:18px">1 &lt;= K &lt;= 10<sup>6</sup></span></p>
- <p></p>
-            </div>
+</div>
