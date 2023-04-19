@@ -101,56 +101,55 @@ struct Node
 class Solution{
 
     public:
-    unordered_map<int,vector<int>>mp;
-    void f(Node *root)
-    {
-        if(!root) return ;
-        if(root->left)
-        {
-            mp[root->data].push_back(root->left->data);
-            mp[root->left->data].push_back(root->data);
-            f(root->left);
-            
+    unordered_map<int,vector<int>> connected_nodes;
+    
+    void mark_nodes(Node* root){
+        if(!root){
+            return;
         }
-        if(root->right)
-        {
-            mp[root->data].push_back(root->right->data);
-            mp[root->right->data].push_back(root->data);
-            f(root->right);
-            
+        if(root->left){
+            connected_nodes[root->data].push_back(root->left->data);
+            connected_nodes[root->left->data].push_back(root->data);
+            mark_nodes(root->left);
         }
+        if(root->right){
+            connected_nodes[root->data].push_back(root->right->data);
+            connected_nodes[root->right->data].push_back(root->data);
+            mark_nodes(root->right);
+        }
+        return;
     }
     
     int ladoos(Node* root, int home, int k)
     {
-        f(root);
-        queue<int>q;
-        unordered_map<int,int>vis;
+        mark_nodes(root);
+        
+        queue<int> q;
         q.push(home);
-        vis[home]++;
-        int l=0;
-        int s=0;
-        while(!q.empty())
-        {
-            int n=q.size();
-            while(n--)
-            {
-                
-                int c=q.front();
+        
+        unordered_map<int,bool> visited;
+        visited[home] = true;
+        
+        int number_of_nodes = 0, sum = 0;
+        
+        while(!q.empty()){
+            int n = q.size();
+            while(n--){
+                int front = q.front();
                 q.pop();
-                if(l<=k)s=s+c;
-                for(auto i:mp[c])
-                {
-                    if(!vis[i])
-                    {
-                    vis[i]=1;
-                    q.push(i);
+                if(number_of_nodes <= k){
+                    sum = sum + front;
+                }
+                for(auto i: connected_nodes[front]){
+                    if(!visited[i]){
+                        q.push(i);
+                        visited[i] = true;
                     }
                 }
             }
-            l++;
+            number_of_nodes++;
         }
-        return s;
+        return sum;
     }
 
 
