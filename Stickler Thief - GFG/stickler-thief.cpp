@@ -1,27 +1,38 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
     public:
     //Function to find the maximum money the thief can get.
+    vector<int> dp;
+    int loot(int arr[], int n, int i){
+        if(i>=n){
+            return 0;
+        }
+        if(dp[i]!=-1){
+            return dp[i];
+        }
+        return dp[i] = max(arr[i]+loot(arr,n,i+2),loot(arr,n,i+1));
+    }
     int FindMaxSum(int arr[], int n)
     {
-        int dp[n];
+        dp.resize(n,-1);
         dp[0] = arr[0];
-        dp[1] = arr[1];
-        dp[2] = arr[0] + arr[2];
-        for(int i=3;i<n;i++){
-            dp[i] = arr[i] + max(dp[i-3],dp[i-2]);
+        dp[1] = max(arr[1],arr[0]);
+        
+        for(int i=2;i<n;i++){
+            dp[i] = max(arr[i]+dp[i-2],dp[i-1]);
         }
-        return max(dp[n-1],dp[n-2]);
+        
+        return dp[n-1];
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main()
 {
     //taking total testcases
@@ -43,4 +54,5 @@ int main()
 	}
 	return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
