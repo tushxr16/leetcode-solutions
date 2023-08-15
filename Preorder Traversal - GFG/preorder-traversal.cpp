@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -107,6 +107,7 @@ int main() {
     }
     return 0;
 }
+
 // } Driver Code Ends
 
 
@@ -128,16 +129,18 @@ struct Node
 */
 
 //Function to return a list containing the preorder traversal of the tree.
-void trav(Node *root, vector<int> &v){
-    if(root==nullptr)return;
-    v.push_back(root->data);
-    trav(root->left,v);
-    trav(root->right,v);
-    return;
+void trav(Node* node, vector<int> &ans){
+    if(!node){
+        return;
+    }
+    ans.push_back(node->data);
+    trav(node->left,ans);
+    trav(node->right,ans);
 }
+
 vector <int> preorder(Node* root)
 {
- vector<int> v;
- trav(root,v);
- return v;
+    vector<int> ans;
+    trav(root,ans);
+    return ans;
 }
