@@ -1,7 +1,6 @@
 # Preorder Traversal
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a&nbsp;binary tree, find&nbsp;its&nbsp;preorder traversal.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a&nbsp;binary tree, find&nbsp;its&nbsp;preorder traversal.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -35,5 +34,4 @@ You just have to complete the function <strong>preorder() </strong>which takes t
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= Number of nodes &lt;= 10<sup>4</sup><br>
 0 &lt;= Data of a node &lt;= 10<sup>5</sup></span></p>
- <p></p>
-            </div>
+</div>
