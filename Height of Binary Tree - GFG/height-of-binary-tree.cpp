@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial template for C++
 
 #include <bits/stdc++.h>
@@ -80,7 +80,7 @@ Node* buildTree(string str)
     return root;
 }
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 /*
@@ -98,13 +98,14 @@ struct Node
 */
 class Solution{
     public:
+    //Function to find the height of a binary tree.
     int height(struct Node* node){
-        if(node==nullptr)return 0;
-        return 1 + max(height(node->left),height(node->right));
+        if(!node) return 0;
+        else return 1 + max(height(node->left), height(node->right));
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main()
 {
     int t;
@@ -118,4 +119,5 @@ int main()
 		cout<<ob.height(root)<<endl;
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
