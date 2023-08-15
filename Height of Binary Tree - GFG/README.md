@@ -1,7 +1,6 @@
 # Height of Binary Tree
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a binary tree, find its height.</span></p>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a binary tree, find its height.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -35,5 +34,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= Number of nodes &lt;= 10<sup>5</sup><br>
 1 &lt;= Data of a node &lt;= 10<sup>5</sup></span></p>
- <p></p>
-            </div>
+</div>
