@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,7 +21,7 @@ Node* newNode(int val)
     return temp;
 }
 
- // } Driver Code Ends
+// } Driver Code Ends
 /* A binary tree Node
 
 struct Node
@@ -41,29 +41,28 @@ struct Node
 class Solution
 {
     public:
+    //Function to return the level order traversal of a tree.
     vector<int> levelOrder(Node* node)
     {
-        vector<int> v;
+        vector<int> ans;
         queue<Node*> q;
-        if(node!=nullptr)
+        if(node)
             q.push(node);
-            
+        
         while(!q.empty()){
-            Node * tmp = q.front();
-            v.push_back(tmp->data);
+            Node* top = q.front();
             q.pop();
-            
-            if(tmp->left)
-                q.push(tmp->left);
-            if(tmp->right)
-                q.push(tmp->right);
-                
+            ans.push_back(top->data);
+            if(top->left)
+                q.push(top->left);
+            if(top->right)
+                q.push(top->right);
         }
-        return v;
+        return ans;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 /* Helper function to test mirror(). Given a binary
    search tree, print out its data elements in
@@ -162,4 +161,5 @@ int main()
 }
 
 
-  // } Driver Code Ends
+
+// } Driver Code Ends
