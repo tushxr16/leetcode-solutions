@@ -1,7 +1,6 @@
 # Right View of Binary Tree
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a Binary Tree, find&nbsp;<strong>Right view</strong> of it. Right view of a Binary Tree is set of nodes visible when tree is viewed from <strong>right </strong>side.</span></p>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a Binary Tree, find&nbsp;<strong>Right view</strong> of it. Right view of a Binary Tree is set of nodes visible when tree is viewed from <strong>right </strong>side.</span></p>
 
 <p><span style="font-size:18px">Right view of following tree is 1 3 7 8.</span></p>
 
@@ -41,6 +40,5 @@
 
 <p><span style="font-size:18px"><strong>Constraints:</strong></span><br>
 <span style="font-size:18px">1 ≤ Number of nodes ≤ 10<sup>5</sup></span><br>
-<span style="font-size:18px">1 ≤ Data of a node ≤ 10<sup>5</sup></span></p>
- <p></p>
-            </div>
+<span style="font-size:18px">0 ≤ Data of a node ≤ 10<sup>5</sup></span></p>
+</div>
