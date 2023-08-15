@@ -1,7 +1,6 @@
 # Inorder Traversal
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a Binary Tree, find the In-Order Traversal of it.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a Binary Tree, find the In-Order Traversal of it.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -35,5 +34,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 1 &lt;= Number of nodes &lt;= 10<sup>5</sup><br>
 0 &lt;= Data of a node &lt;= 10<sup>5</sup></span><br>
 &nbsp;</p>
- <p></p>
-            </div>
+</div>
