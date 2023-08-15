@@ -13,19 +13,16 @@ class Solution
 	    queue<pair<int,int>> q;
 	    vector<int> vis(V,false);
 	    q.push({0,0});
-	    if(X==0){
-	        return 0;
-	    }
 	    while(!q.empty()){
 	        pair<int,int> x = q.front();
 	        q.pop();
+	        if(x.first==X){
+	            return x.second;
+	        }
 	        vis[x.first] = true;
 	        for(int c: adj[x.first]){
 	            if(!vis[c])
     	            q.push({c,x.second+1});
-	            if(c==X){
-	                return x.second+1;
-	            }
 	        }
 	    }
 	    return -1;
