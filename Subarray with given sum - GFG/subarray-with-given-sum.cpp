@@ -1,34 +1,31 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
     public:
     //Function to find a continuous sub-array which adds up to a given number.
-    vector<int> subarraySum(int arr[], int n, long long s)
+    vector<int> subarraySum(vector<int> &arr, int &n, long long &s)
     {
-        int i = 0, j = 0;
-        long long sum = arr[0];
-        while(i<n && j<n){
-            if(sum>s){
-                sum-=arr[i];
-                i++;
+        int left = 0, right = 0;
+        long long sum = 0;
+        while(right<n && left<n){
+            sum += arr[right++];
+            while(sum>s){
+                sum -= arr[left++];
             }
-            else if(sum==s){
-                return {i+1,j+1};
-            }else {
-                j++;
-                sum+=arr[j];
+            if(sum==s && left!=right){
+                return {left+1,right};
             }
         }
         return {-1};
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main()
  {
@@ -39,7 +36,8 @@ int main()
         int n;
         long long s;
         cin>>n>>s;
-        int arr[n];
+        vector<int>arr(n);
+        // int arr[n];
         const int mx = 1e9;
         for(int i=0;i<n;i++)
         {
@@ -55,4 +53,5 @@ int main()
         
     }
 	return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
