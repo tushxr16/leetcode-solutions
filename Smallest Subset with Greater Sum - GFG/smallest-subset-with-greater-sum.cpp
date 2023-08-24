@@ -11,8 +11,7 @@ class Solution{
     public:
     int minSubset(vector<int> &Arr,int N){
         sort(Arr.begin(),Arr.end(),greater<int>());
-        long long int sum = 0;
-        for(int i=0;i<N;i++) sum += Arr[i];
+        long long int sum = accumulate(Arr.begin(),Arr.end(),0LL);
         long long int currSum = 0;
         for(int i=0;i<N;i++){
             currSum += Arr[i];
