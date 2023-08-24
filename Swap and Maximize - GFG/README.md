@@ -1,7 +1,6 @@
 # Swap and Maximize
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array <strong>a[ ]</strong> of&nbsp;<strong>N</strong>&nbsp;elements. Consider array as a circular array <em>i.e.</em> element after <strong>a<sub>n</sub></strong>&nbsp;is <strong>a<sub>1</sub></strong>. The task is to find maximum sum of the absolute difference between consecutive elements with rearrangement of array elements allowed <em>i.e</em>. after any rearrangement of array elements find <strong>|a<sub>1</sub>&nbsp;– a<sub>2</sub>| + |a<sub>2</sub>&nbsp;– a<sub>3</sub>| + …… + |a<sub>n-1&nbsp;</sub>–&nbsp;a<sub>n</sub>| + |a<sub>n</sub>&nbsp;– a<sub>1</sub>|</strong>.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array <strong>a[ ]</strong> of&nbsp;<strong>N</strong>&nbsp;elements. Consider array as a circular array <em>i.e.</em> element after <strong>a<sub>n</sub></strong>&nbsp;is <strong>a<sub>1</sub></strong>. The task is to find maximum sum of the absolute difference between consecutive elements with rearrangement of array elements allowed <em>i.e</em>. after any rearrangement of array elements find <strong>|a<sub>1</sub>&nbsp;– a<sub>2</sub>| + |a<sub>2</sub>&nbsp;– a<sub>3</sub>| + …… + |a<sub>n-1&nbsp;</sub>–&nbsp;a<sub>n</sub>| + |a<sub>n</sub>&nbsp;– a<sub>1</sub>|</strong>.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -33,5 +32,4 @@ This is a function problem. You don't need to take any input, as it is already a
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 2 ≤ N ≤ 10<sup>5</sup></span></p>
- <p></p>
-            </div>
+</div>
