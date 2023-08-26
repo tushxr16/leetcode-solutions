@@ -16,14 +16,16 @@ class Solution {
             mp1[A[i]].push_back(A[i+1]);
             mp2[B[i]].push_back(B[i+1]);
         }
-        
+        for(pair<int,vector<int>> p: mp2){
+            reverse(mp2[p.first].begin(),mp2[p.first].end());
+        }
         for(pair<int,vector<int>> p: mp1){
             vector<int> a = p.second;
             vector<int> b = mp2[p.first];
             int n = a.size(), m = b.size();
             if(n!=m) return 0;
             for(int i=0;i<n;i++){
-                if(a[i]!=b[n-i-1]) return 0;
+                if(a[i]!=b[i]) return 0;
             }
         }
         return 1;
