@@ -1,30 +1,30 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 class Solution{
 public:
 	// The main function that returns the arrangement with the largest value as
 	// string.
 	// The function accepts a vector of strings
-	static bool comp(string a, string b){
-	    return a+b>b+a;
+	static bool comp(const string a, const string b){
+	    return a+b > b+a;
 	}
 	string printLargest(vector<string> &arr) {
-	    int n = arr.size();
 	    sort(arr.begin(),arr.end(),comp);
-	    string ans = "";
-	    for(int i=0;i<n;i++)
-	        ans+=arr[i];
-	    return ans;
+	    string s;
+	    for(string c: arr){
+	        s += c;
+	    }
+	    return s;
 	}
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main() {
     int t;
@@ -41,4 +41,5 @@ int main() {
         cout << ans << "\n";
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
