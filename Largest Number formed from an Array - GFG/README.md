@@ -1,7 +1,6 @@
 # Largest Number formed from an Array
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a list&nbsp;of non negative integers, arrange them in such a manner&nbsp;that they form the largest number possible.The result is going to be very large, hence return the result in the form of a string.</span></p>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a list&nbsp;of non negative integers, arrange them in such a manner&nbsp;that they form the largest number possible.The result is going to be very large, hence return the result in the form of a string.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -29,12 +28,11 @@ gives the largest value.</span></pre>
 You don't need to read input or print anything. Your task is to complete the function&nbsp;<strong>printLargest()</strong>&nbsp;which takes the <strong>array of strings</strong>&nbsp;<strong>arr[]</strong><strong>&nbsp;</strong>as parameter and returns a string&nbsp;denoting&nbsp;the answer.<br>
 <br>
 <strong>Expected Time Complexity:</strong>&nbsp;O(NlogN)<br>
-<strong>Expected Auxiliary Space:</strong>&nbsp;O(1)</span></p>
+<strong>Expected Auxiliary Space:</strong>&nbsp;O(N)</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ N ≤ 10<sup>5</sup><br>
 0 ≤ Arr[i] ≤ 10<sup>18</sup></span><br>
 <span style="font-size:18px">Sum of all the elements of the array is greater than 0.</span></p>
- <p></p>
-            </div>
+</div>
