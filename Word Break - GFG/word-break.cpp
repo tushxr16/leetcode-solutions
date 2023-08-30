@@ -15,6 +15,7 @@ class Solution
 {
 public:
     int wordBreak(string A, vector<string> &B) {
+        
         int n = A.size(), m = B.size();
         vector<bool> dp(n+1,false);
         dp[n] = true;
