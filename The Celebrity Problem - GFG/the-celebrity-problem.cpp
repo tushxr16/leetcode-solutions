@@ -1,10 +1,10 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial template for C++
 
 #include<bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 class Solution 
@@ -13,25 +13,27 @@ class Solution
     //Function to find if there is a celebrity in the party or not.
     int celebrity(vector<vector<int> >& M, int n) 
     {
-        for(int i=0;i<n;i++){
-            int tmp = 0, idx = 0;
-            for(int j=0;j<n;j++){
-                if(M[j][i]==1)
-                    tmp++;
-                else idx = j;
+        int celeb = -1;
+        for(int j=0;j<n;j++){
+            int cnt = 0;
+            for(int i=0;i<n;i++){
+                if(M[i][j]==1)
+                    cnt++;
             }
-            if(tmp==n-1){
-                for(int j=0;j<n;j++)
-                    if(M[idx][j]==1)
+            if(cnt==n-1){
+                cnt = 0;
+                for(int i=0;i<n;i++){
+                    if(M[j][i]==1)
                         return -1;
-                return idx;
+                }
+                return j;
             }
         }
-        return -1;
+        return celeb;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main()
 {
@@ -54,4 +56,5 @@ int main()
 
     }
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
