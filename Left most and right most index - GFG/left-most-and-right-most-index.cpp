@@ -9,7 +9,9 @@ class Solution
     public:
     pair<long,long> indexes(vector<long long> v, long long x)
     {
-        int lo = 0, hi = v.size()-1, midF=-1, midL=-1;
+        int n = v.size();
+        int lo = 0, hi = n-1, p1 = -1, p2 = -1;
+        
         while(lo<=hi){
             int mid = (lo+hi)/2;
             if(v[mid]>x){
@@ -17,11 +19,13 @@ class Solution
             }else if(v[mid]<x){
                 lo = mid+1;
             }else{
-                midF = mid;
+                p1 = mid;
                 hi = mid-1;
             }
         }
-        lo = 0, hi = v.size()-1;
+        
+        lo = 0, hi = n-1;
+        
         while(lo<=hi){
             int mid = (lo+hi)/2;
             if(v[mid]>x){
@@ -29,11 +33,12 @@ class Solution
             }else if(v[mid]<x){
                 lo = mid+1;
             }else{
-                midL = mid;
+                p2 = mid;
                 lo = mid+1;
             }
         }
-        return {midF,midL};
+        
+        return {p1,p2};
     }
 };
 
