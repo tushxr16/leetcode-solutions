@@ -43,6 +43,7 @@ class Solution
         }
         
         // Transpose
+        int cnt = 0;
         vector<vector<int>> adjT(V);
         
         for(int i=0;i<V;i++){
@@ -51,8 +52,6 @@ class Solution
                 adjT[x].push_back(i);
             }
         }
-        
-        int cnt = 0;
         
         while(!st.empty()){
             int x = st.top();
