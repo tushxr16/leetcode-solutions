@@ -34,7 +34,7 @@ class Solution
                 int ny = y + dy[i];
                 
                 if(nx<n && nx>-1 && ny<m && ny>-1 && vis[nx][ny]==-1){
-                    q.push({dist + abs(nx-x)+abs(ny-y),{nx,ny}});
+                    q.push({dist+1,{nx,ny}});
                     vis[nx][ny] = dist;
                 }
 	        }
