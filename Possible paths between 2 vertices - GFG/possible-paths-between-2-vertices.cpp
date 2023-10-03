@@ -1,35 +1,32 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution {
   public:
     // Function to count paths between two vertices in a directed graph.
+    void dfs(int x, vector<int> adj[], int dst, int &cnt){
+        if(x==dst){
+            cnt++;
+            return;
+        }
+        
+        for(int i: adj[x]){
+            dfs(i,adj,dst,cnt);
+        }
+        
+        return;
+    }
     
     int countPaths(int V, vector<int> adj[], int source, int destination) {
-        queue<int> q;
-        int count = 0;
-        q.push(source);
-        
-        if(source==destination)
-            return 1;
-        
-        while(!q.empty()){
-            int top = q.front();
-            q.pop();
-            for(int i=0;i<adj[top].size();i++){
-                if(adj[top][i] == destination){
-                    count++;
-                }
-                q.push(adj[top][i]);
-            }
-        }
-        return count;
+        int cnt = 0;
+        dfs(source,adj,destination,cnt);
+        return cnt;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() {
     int tc;
     cin >> tc;
@@ -49,4 +46,5 @@ int main() {
         cout << obj.countPaths(V, adj, source, destination) << endl;
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
