@@ -22,8 +22,8 @@ class Solution
             pq.pop();
         }
         int i = pq.size();
-        while(!pq.empty()){
-            ans[--i] = pq.top();
+        while(i--){
+            ans[i] = pq.top();
             pq.pop();
         }
         
