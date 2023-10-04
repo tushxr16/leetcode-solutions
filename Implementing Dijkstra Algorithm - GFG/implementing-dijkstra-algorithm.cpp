@@ -1,39 +1,30 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include<bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
 	public:
 	//Function to find the shortest distance of all the vertices
     //from the source vertex S.
-    int getMinimumWeight(vector<int> &weights, vector<bool> &vis, int V){
-        int mn=INT_MAX, idx = 0;
-        for(int i=0;i<V;i++){
-            if(!vis[i] && mn>weights[i]){
-                idx = i;
-                mn = weights[i];
-            }
-        }
-        return idx;
-    }
-    vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
-    {
+
+    vector <int> dijkstra(int V, vector<vector<int>> adj[], int S){
         vector<int> weights(V,INT_MAX);
-        vector<bool> vis(V,false);
-        weights[S] = 0;
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
         
-        for(int i=0;i<V-1;i++){
+        weights[S] = 0;
+        pq.push({0,S});
+        
+        while(!pq.empty()){
+            int min_idx = pq.top().second;
+            pq.pop();
             
-            int x = getMinimumWeight(weights,vis,V);
-            vis[x] = true;
-            
-            for(auto node: adj[x]){
-                int node_val = node[0];
-                int weight = node[1];
-                if(!vis[node_val] && weights[node_val]>weight+weights[x]){
-                    weights[node_val] = weight + weights[x];
+            for(vector<int> v: adj[min_idx]){
+                int node = v[0], weight = v[1];
+                if(weights[node] > weight + weights[min_idx]){
+                    weights[node] = weight + weights[min_idx];
+                    pq.push({weights[node],node});
                 }
             }
         }
@@ -43,7 +34,7 @@ class Solution
 };
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 
 int main()
@@ -80,4 +71,5 @@ int main()
     return 0;
 }
 
-  // } Driver Code Ends
+
+// } Driver Code Ends
