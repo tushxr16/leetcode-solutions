@@ -1,28 +1,27 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial Template for C++
 
 #include<bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function Template for C++
 
 
 class Solution{
 	public:
-    	long long findNth(long long N)
-    {
-        long long ans = 0, c = 1;
+    	long long findNth(long long N){
+        long long ans = 0, base10 = 1;
         while(N){
-            ans += (N%9)*c;
-            c *= 10;
+            ans += (N%9)*base10;
             N /= 9;
+            base10 *= 10;
         }
         return ans;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main()
 {
 	int t;
@@ -37,4 +36,5 @@ int main()
 	}
 }
 
-  // } Driver Code Ends
+
+// } Driver Code Ends
