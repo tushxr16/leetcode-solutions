@@ -1,42 +1,35 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 // Initial Template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 // User function Template for C++
 
 class Solution{
 public:
-    int mcm(int i, int j, int arr[], vector<vector<int>> &dp){
-        if(j==i){
+    int mcm(int i, int n, int arr[], vector<vector<int>> &dp, int &N){
+        if(i==n){
             return 0;
         }
-        
-        int mini = 1e9;
-        
-        if(dp[i][j]!=mini){
-            return dp[i][j];
+        if(dp[i][n]!=-1)
+            return dp[i][n];
+            
+        int ans = INT_MAX;
+        for(int j=i;j<n;j++){
+            ans = min(ans, arr[i-1]*arr[j]*arr[n] + mcm(i,j,arr,dp,N) + mcm(j+1,n,arr,dp,N));
         }
-        
-        for(int k=i;k<j;k++){
-            int steps = arr[i-1]*arr[k]*arr[j] + mcm(i,k,arr,dp) + mcm(k+1,j,arr,dp);
-            if(steps<mini)
-                mini = steps;
-        }
-        
-        return dp[i][j] = mini;
+        return dp[i][n] = ans;
     }
     
-    int matrixMultiplication(int N, int arr[])
-    {
-        vector<vector<int>> dp(N+1, vector<int>(N+1,1e9));
-        return mcm(1,N-1,arr,dp);
+    int matrixMultiplication(int N, int arr[]){
+        vector<vector<int>> dp(N,vector<int>(N,-1));
+        return mcm(1,N-1,arr,dp,N);
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main(){
     int t;
@@ -52,4 +45,5 @@ int main(){
         cout<<ob.matrixMultiplication(N, arr)<<endl;
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
