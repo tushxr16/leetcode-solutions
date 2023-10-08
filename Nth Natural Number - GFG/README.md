@@ -1,7 +1,6 @@
 # Nth Natural Number
-## Hard 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a positive integer N. You have to find <strong>N<sup>th</sup></strong>&nbsp;natural number after removing all the numbers containing digit <strong>9</strong>.</span></p>
+## Hard
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a positive integer N. You have to find <strong>N<sup>th</sup></strong>&nbsp;natural number after removing all the numbers containing digit <strong>9</strong>.</span></p>
 
 <p><br>
 <strong><span style="font-size:18px">Example 1:</span></strong></p>
@@ -39,5 +38,4 @@ You don't need to read input or print anything. Complete the function <strong>fi
 <p><br>
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ N ≤ 10<sup>12</sup> </span></p>
- <p></p>
-            </div>
+</div>
