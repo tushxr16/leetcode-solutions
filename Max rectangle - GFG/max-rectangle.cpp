@@ -1,10 +1,10 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 1000
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*You are required to complete this method*/
 
 class Solution{
@@ -55,7 +55,9 @@ class Solution{
 };
 
 
-// { Driver Code Starts.
+
+
+//{ Driver Code Starts.
 int main() {
     int T;
     cin >> T;
@@ -75,4 +77,5 @@ int main() {
         cout << obj.maxArea(M, n, m) << endl;
     }
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
